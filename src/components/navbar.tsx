@@ -78,7 +78,7 @@ export default function Navbar({ colors }: NavbarProps) {
     navigator.geolocation.getCurrentPosition(
       async (position: GeolocationPosition) => {
         try {
-          const apiKey = process.env.NEXT_PUBLIC_OPENCAGE_API_KEY || '29a8d0f8953c4dd9916f235c1aefe163';
+          const apiKey = process.env.NEXT_PUBLIC_OPENCAGE_API_KEY!;
           const response = await fetch(
             `https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}+${position.coords.longitude}&key=${apiKey}`
           );
